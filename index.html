@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SociVibe</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SociVibe</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <</head>
+
+
+
+    <body>
+        <!--navbar-->
+        <nav>
+            <a href="/" class="logo">
+                <img src="socivibe.logo.png" class="logo-img" />
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Home</a>
+                <a href="profile.html">👤 Profile</a>
+                <a href="friends.html">👥 Friends</a>
+                <a href="messages.html">💬 Messages</a>
+                <a href="notification.html">🔔 Notifications</a>
+            </div>
+            <div class="search-logout">
+                <div class="search-bar-container">
+                    <input type="text" class="search-bar" placeholder="Search users, posts, groups..." />
+
+
+                </div>
+                <!--logout button-->
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+
+            </div>
+        </nav>
+
+        <!--Banner/slidder section-->
+        <div class="banner">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="images/banner1.jpg" alt="Banner 1" />
+                    <div class="caption">Featured Post 1</div>
+                </div>
+                <div class="slide">
+                    <img src="images/banner2.jpg" alt="Banner 2" />
+                    <div class="caption">Featured Post2</div>
+                </div>
+                <div class="slide">
+                    <img src="images/banner3.jpg" alt="Banner 3" />
+                    <div class="caption">Featured Post 3</div>
+                </div>
+            </div>
+        </div>
+
+        <!--User Feed Section-->
+
+        <div class="user-feed">
+            <div class="create-post">
+                <textarea placeholder="What's on your mind?" rows="4"></textarea>
+                <button>Create Post</button>
+            </div>
+
+
+            <!-- Example Post -->
+            <!--user 1-->
+            <div class="post">
+                <div class="post-header">
+                    <img src="images/user.jpg" alt="User Avatar" class="avatar" />
+                    <div class="user-info">
+                        <strong>Rahul Khedkar</strong>
+                        <span>2 hours ago</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ut!</p>
+                    <img src="images/post3.jpg" alt="Post Image" />
+                </div>
+                <div class="post-actions">
+                    <button>Like</button>
+                    <button>Comment</button>
+                    <button>Share</button>
+                </div>
+            </div>
+        </div>
+        <!--user 2-->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/user.jpg" alt="User Avatar" class="avatar" />
+                <div class="user-info">
+                    <strong>Rahul Khedkar</strong>
+                    <span>2 hours ago</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ut!</p>
+                <img src="images/post2.jpg" alt="Post Image" />
+            </div>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+                <button>Share</button>
+            </div>
+        </div>
+        </div>
+        <!--user 3-->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/user.jpg" alt="User Avatar" class="avatar" />
+                <div class="user-info">
+                    <strong>Rahul Khedkar</strong>
+                    <span>3 hours ago</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ut!</p>
+                <img src="images/post3.jpg" alt="Post Image" />
+            </div>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+                <button>Share</button>
+            </div>
+        </div>
+        </div>
+
+
+       <!-- Trending Topics Section -->
+  <div class="trending-section">
+    <h2>Trending Topics</h2>
+    <div class="trending-list">
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#FitnessGoals</p>
+        <span>15,200 posts</span>
+      </div>
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#TechNews</p>
+        <span>25,500 posts</span>
+      </div>
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#TravelDiaries</p>
+        <span>18,800 posts</span>
+      </div>
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#FoodLovers</p>
+        <span>30,200 posts</span>
+      </div>
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#MusicVibes</p>
+        <span>12,000 posts</span>
+      </div>
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#MentalHealthMatters</p>
+        <span>7,300 posts</span>
+      </div>
+      <div class="trend-card">
+        <i class="fas fa-hashtag"></i>
+        <p>#DancersClub</p>
+        <span>7,300 posts</span>
+      </div>
+    </div>
+  </div>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/contact-us">Contact Us</a>
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank">📘</a>
+                <a href="https://twitter.com" target="_blank">🐦</a>
+                <a href="https://instagram.com" target="_blank">📸</a>
+                <a href="https://linkedin.com" target="_blank">🔗</a>
+            </div>
+        </footer>
+
+
+
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>

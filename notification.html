@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notifications</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+    }
+
+    .notifications-list {
+      padding: 20px;
+      background-color: #fff;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .notification-header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .notification-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .notification-item:hover {
+      background-color: #f7f7f7;
+    }
+
+    .notification-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .notification-item .content {
+      flex: 1;
+    }
+
+    .notification-item .content p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .notification-item .time {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .notification-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+    }
+
+    .like-icon {
+      color: red;
+    }
+
+    .comment-icon {
+      color: #0084ff;
+    }
+
+    .message-icon {
+      color: #34b7f1;
+    }
+
+    .friend-request-icon {
+      color: #34b7f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="notifications-list">
+    <div class="notification-header">Recent Notifications</div>
+
+    <!-- Dynamic Notifications will be injected here -->
+    <div id="notificationList"></div>
+  </div>
+
+  <script>
+    const notifications = [
+      { user: 'John Doe', type: 'like', time: '5 minutes ago', message: 'liked your photo' },
+      { user: 'Jane Smith', type: 'comment', time: '1 hour ago', message: 'commented on your post' },
+      { user: 'Michael Clark', type: 'friend-request', time: '3 hours ago', message: 'sent you a friend request' },
+      { user: 'Alice Brown', type: 'message', time: '2 days ago', message: 'sent you a message' },
+      { user: 'Sarah Lee', type: 'like', time: '4 minutes ago', message: 'liked your status' },
+      { user: 'Chris Walker', type: 'comment', time: '30 minutes ago', message: 'commented on your photo' },
+      { user: 'Emma White', type: 'friend-request', time: '2 hours ago', message: 'sent you a friend request' },
+      { user: 'James Johnson', type: 'message', time: '1 day ago', message: 'messaged you' },
+      { user: 'Sophia Williams', type: 'like', time: '6 minutes ago', message: 'liked your comment' },
+      { user: 'Ethan Brown', type: 'comment', time: '50 minutes ago', message: 'commented on your photo' },
+      { user: 'Olivia Davis', type: 'friend-request', time: '4 hours ago', message: 'sent you a friend request' },
+      { user: 'Liam Harris', type: 'message', time: '1 week ago', message: 'sent you a message' },
+      { user: 'Isabella Miller', type: 'like', time: '20 minutes ago', message: 'liked your post' },
+      { user: 'Benjamin Davis', type: 'comment', time: '45 minutes ago', message: 'commented on your status' },
+      { user: 'Charlotte Martinez', type: 'friend-request', time: '1 hour ago', message: 'sent you a friend request' },
+      { user: 'Amelia Rodriguez', type: 'message', time: '3 days ago', message: 'messaged you' },
+      { user: 'Daniel Scott', type: 'like', time: '10 minutes ago', message: 'liked your photo' },
+      { user: 'Mia Hernandez', type: 'comment', time: '2 hours ago', message: 'commented on your post' },
+      { user: 'Lucas Thomas', type: 'friend-request', time: '5 hours ago', message: 'sent you a friend request' },
+      { user: 'Zoe Clark', type: 'message', time: '5 minutes ago', message: 'sent you a message' }
+    ];
+
+    function createNotificationElement(notification) {
+      const notificationItem = document.createElement('div');
+      notificationItem.classList.add('notification-item');
+      const icon = document.createElement('i');
+      const img = document.createElement('img');
+      const content = document.createElement('div');
+      const time = document.createElement('span');
+
+      // Set notification icon based on type
+      switch (notification.type) {
+        case 'like':
+          icon.className = 'notification-icon like-icon';
+          icon.innerHTML = '&#10084;';
+          break;
+        case 'comment':
+          icon.className = 'notification-icon comment-icon';
+          icon.innerHTML = '&#128172;';
+          break;
+        case 'friend-request':
+          icon.className = 'notification-icon friend-request-icon';
+          icon.innerHTML = '&#128100;';
+          break;
+        case 'message':
+          icon.className = 'notification-icon message-icon';
+          icon.innerHTML = '&#128172;';
+          break;
+        default:
+          break;
+      }
+
+      // Set image and message content
+      img.src = `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 10)}.jpg`; // Random user images
+      img.alt = 'User Image';
+      content.classList.add('content');
+      content.innerHTML = `<strong>${notification.user}</strong> ${notification.message}`;
+      time.classList.add('time');
+      time.textContent = notification.time;
+
+      notificationItem.appendChild(img);
+      notificationItem.appendChild(content);
+      notificationItem.appendChild(time);
+      notificationItem.appendChild(icon);
+
+      return notificationItem;
+    }
+
+    const notificationList = document.getElementById('notificationList');
+    notifications.forEach(notification => {
+      const notificationElement = createNotificationElement(notification);
+      notificationList.appendChild(notificationElement);
+    });
+  </script>
+</body>
+</html>
